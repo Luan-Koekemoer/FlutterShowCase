@@ -44,4 +44,4 @@ app.*.map.json
 /android/app/release
 
 # Telemetry
-*flutter_jank_metrics_*
+flutter_jank_metrics_*
