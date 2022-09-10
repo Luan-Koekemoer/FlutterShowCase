@@ -1,19 +1,20 @@
-class Album {
-  final int userId;
-  final int id;
-  final String title;
+/* {"operation":"simplify","expression":"8","result":"8"} */
+class Calculation {
+  final String operation;
+  final String expression;
+  final String result;
 
-  const Album({
-    required this.userId,
-    required this.id,
-    required this.title,
+  const Calculation({
+    required this.operation,
+    required this.expression,
+    required this.result,
   });
 
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
+  factory Calculation.fromJson(Map<String, dynamic> json) {
+    return Calculation(
+      operation: json['operation'],
+      expression: json['expression'],
+      result: json['result'],
     );
   }
 }

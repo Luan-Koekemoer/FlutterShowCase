@@ -26,28 +26,35 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  Widget _buildNavButton(context, textTo, pageToNav){
-    return ElevatedButton(onPressed: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => pageToNav))},
-                          child: Text(textTo));
+  Widget _buildNavButton(context, textTo, pageToNav) {
+    return ElevatedButton(
+        onPressed: () => {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => pageToNav))
+            },
+        child: Text(textTo));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Demo'),
-      ),
-      body: Column(
-        children: [
-          Row(
+        appBar: AppBar(
+          title: const Text('Flutter Demo'),
+        ),
+        body: Center(
+          child: Column(
             children: [
-              _buildNavButton(context, "Colour Changer", const ColourChanger()),
-              _buildNavButton(context, "Scientific Calculator", const ScientificCalculator()),
-              _buildNavButton(context, "Paint App", const PaintApp())
+              Column(
+                children: [
+                  _buildNavButton(
+                      context, "Colour Changer", const ColourChanger()),
+                  _buildNavButton(context, "Scientific Calculator",
+                      const ScientificCalculator()),
+                  _buildNavButton(context, "Paint App", const PaintApp())
+                ],
+              )
             ],
-          )
-        ],
-      ),
-    );
+          ),
+        ));
   }
 }
